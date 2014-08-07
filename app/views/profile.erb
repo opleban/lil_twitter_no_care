@@ -1,0 +1,11 @@
+<div class="container">
+	<h1>Hello <%=@user.username %>!</h1>
+	<%= erb :new_tweet_form %>
+	<% get_tweets.each do |tweet| %>
+		<div class="tweet_box">
+			<p><%= @user.username %></p>
+			<p><%= tweet.created_at.strftime("%F") %></p>
+			<p><%= tweet.content %></p>
+		</div>
+	<% end %>
+</div>

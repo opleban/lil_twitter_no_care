@@ -1,0 +1,26 @@
+h1{
+	text-align: center;
+}
+
+.tweet_box {
+	text-align:center;
+	width:300px;
+	border: 1px solid black;
+	margin:0 auto;
+}
+
+#new_tweet{
+	text-align: center;
+
+}
+
+.container{
+background: #87e0fd; /* Old browsers */
+background: -moz-linear-gradient(top,  #87e0fd 0%, #53cbf1 69%, #53cbf1 75%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#87e0fd), color-stop(69%,#53cbf1), color-stop(75%,#53cbf1)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #87e0fd 0%,#53cbf1 69%,#53cbf1 75%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #87e0fd 0%,#53cbf1 69%,#53cbf1 75%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #87e0fd 0%,#53cbf1 69%,#53cbf1 75%); /* IE10+ */
+background: linear-gradient(to bottom,  #87e0fd 0%,#53cbf1 69%,#53cbf1 75%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#53cbf1',GradientType=0 ); /* IE6-9 */
+}
