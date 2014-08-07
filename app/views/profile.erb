@@ -1,0 +1,7 @@
+<div class="container">
+	<h1>Hello <%=User.username %>!</h1>
+	<%= erb :new_tweet_form %>
+	<% User.tweets.each do |tweet| %>
+		<div class="tweet_box"><%= tweet.content %></div>
+	<% end %>
+</div>
