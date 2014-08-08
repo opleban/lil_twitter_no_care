@@ -28,10 +28,6 @@ helpers do
     session.delete(:username)
   end
 
-  def logout
-    session.delete(:username)
-  end
-
   def current_user
     if session[:email]
       User.find_by(email: session[:email])
