@@ -94,3 +94,7 @@ margin: 0 43%;
 p{
 	font-family: 'Lato', sans-serif;
 }
+
+.error{
+	color: red;
+}
