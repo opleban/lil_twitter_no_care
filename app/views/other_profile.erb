@@ -1,11 +1,12 @@
 <%= erb :search_bar %>
 </div>
 <br/>
+<%= gravatar_tag @user.email, :size => 200 %>
 <% @user.tweets.reverse.each do |tweet| %>
 <br/>
 	<div class="tweet_box">
-		<p><%= @user.username %></p>
-		<p><%= tweet.created_at.strftime("%F") %></p>
-		<p><%= tweet.content %></p>
+		<p class="users"><%= @user.username %></p>
+		<p class="usertweet"><%= tweet.created_at.strftime("%F") %></p>
+		<p class="usertweet"><%= tweet.content %></p>
 	</div>
 <% end %>

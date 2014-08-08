@@ -23,12 +23,14 @@
 </head>
 <body>
   <nav>
-      <% if logged_in? %>
-        <form action="/logout" method="get">
-          <input type="submit" value="Sign Out">
-        </form>
+    <% if logged_in? == false %>
+      <form action="/profile" method="get">
+        <input type="submit" value="Home">
+      </form>
+      <form action="/logout" method="get">
+        <input type="submit" value="Sign Out">
+      </form>
       <% end %>
-    </ul>
   </nav>
   <%= yield %>
   <img id="duck" src="../images/duck.png">

@@ -1,9 +1,9 @@
 get '/' do
-  unless logged_in?
+unless logged_in?
+    redirect '/profile'
+  else
     @sign_up = params[:sign_up]
     erb :front
-  else
-    redirect '/profile'
   end
 end
 

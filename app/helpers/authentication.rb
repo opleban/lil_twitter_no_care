@@ -2,10 +2,10 @@
 helpers do
   def login
     @user = User.find_by(username:params[:username])
-    if @user.password == params[:password]
+    if @user && @user.password == params[:password]
       give_token
     else
-      redirect '/login'
+      redirect '/?error=true'
     end
   end
 
