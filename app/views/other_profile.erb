@@ -1,6 +1,7 @@
 <%= erb :search_bar %>
 </div>
 <br/>
+<%= gravatar_tag @user.email, :size => 200 %>
 <% @user.tweets.reverse.each do |tweet| %>
 <br/>
 	<div class="tweet_box">

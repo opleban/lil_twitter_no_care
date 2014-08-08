@@ -1,5 +1,5 @@
 <h1>"Welcome to Quacker"</h1>
-<% if params[:error] == "true" %>
+<% if params[:error] %>
 	<div class="error">Login error.</div>
 <% end %>	
 <%= erb :login %>
