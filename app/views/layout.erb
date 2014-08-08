@@ -15,9 +15,17 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Quacker</title>
 </head>
 <body>
+  <nav>
+      <% if logged_in? %>
+        <form action="/logout" method="get">
+          <input type="submit" value="Sign Out">
+        </form>
+      <% end %>
+    </ul>
+  </nav>
   <%= yield %>
 </body>
 </html>
