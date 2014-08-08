@@ -4,7 +4,7 @@ class CreateUsersAgain < ActiveRecord::Migration
   		t.string :name
   		t.string :username
   		t.string :email
-  		t.string :password
+  		t.string :password_hash
   		t.timestamps
   	end
   end

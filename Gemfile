@@ -14,6 +14,7 @@ gem 'activerecord', '~>4.1'
 gem 'unicorn'
 
 gem 'rake'
+gem 'bcrypt'
 
 group :test do
   gem 'shoulda-matchers'
