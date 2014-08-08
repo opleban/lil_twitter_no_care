@@ -1,0 +1,9 @@
+<h1>"Welcome to Quacker"</h1>
+
+<%= erb :login %>
+<br/>
+<a href='/?sign_up=true'>Sign up</a>
+
+<%if @sign_up %>
+  <%= erb :sign_up %>
+<% end %>
