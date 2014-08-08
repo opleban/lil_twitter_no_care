@@ -1,6 +1,10 @@
 <%= erb :search_bar %>
-<h1>Hello <%=@user.username %>!</h1>
+
+<h1 class="user">Hello <%= @user.username %>!</h1>
+<div id="gravatar">
 <%= gravatar_tag @user.email, :size => 200 %>
+</div>
+
 <div id="new_tweet">
 	<h2>Compose new Quack</h2>
 	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
@@ -23,6 +27,7 @@
 	</div>
 <% end %>
 <br>
+
 
 
 
