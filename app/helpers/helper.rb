@@ -4,8 +4,10 @@ helpers do
 	end
 
 	def get_tweets
-		get_user.tweets.reverse
+		tweets_and_retweets = get_user.tweets + get_user.retweets
+    tweets_and_retweets.sort_by!{|entry| entry.created_at}.reverse
 	end
+
 
 	def search_by_username(username)
 		User.where(username:username)

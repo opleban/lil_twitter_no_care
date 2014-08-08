@@ -50,7 +50,6 @@ end
 post '/retweet/:id' do
   tweet = Tweet.find(params[:id])
   retweet = Retweet.create(:tweet_id => tweet.id, :user_id => get_user.id, :content => tweet.content)
-  p retweet.content
   redirect '/profile'
 end
 

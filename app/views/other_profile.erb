@@ -1,6 +1,7 @@
 <%= erb :search_bar %>
 </div>
 <br/>
+<h1><%= @user.username %></h1>
 <% @user.tweets.reverse.each do |tweet| %>
 <br/>
 	<div class="tweet_box">
@@ -9,7 +10,7 @@
 		<p><%= tweet.content %></p>
     <form action = '/retweet/<%= tweet.id %>' method = 'post'>
 
-      <button type = "submit">Retweet</button>
+      <button type = "submit">Requack</button>
     </form>
 	</div>
 <% end %>

@@ -8,19 +8,15 @@
 <% get_tweets.each do |tweet| %>
 <br/>
 	<div class="tweet_box">
-		<p><%= @user.username %></p>
+  <% if tweet.class == Retweet %>
+    <p><%= tweet.tweet.user.username %></p>
+  <% elsif tweet.class == Tweet %>
+    <p><%= @user.username %></p>
+  <%end%>
 		<p><%= tweet.created_at.strftime("%F") %></p>
 		<p><%= tweet.content %></p>
 	</div>
 <% end %>
 <br>
 
-<% @retweets.each do |retweet| %>
- <br>
-  <div class = "tweet_box">
-    <p><%= retweet.tweet.user.username %></p>
-    <p><%= retweet.created_at.strftime("%F") %></p>
-    <p><%= retweet.content %></p>
-  </div>
-<% end %>
 
