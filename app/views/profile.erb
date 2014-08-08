@@ -1,18 +1,16 @@
 
-	<h1>Hello <%=@user.username %>!</h1>
-	<div id="new_tweet">
-		<h2>Compose new Quack</h2>
-		 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
+<h1>Hello <%=@user.username %>!</h1>
+<div id="new_tweet">
+	<h2>Compose new Quack</h2>
+	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
+</div>
+<br/>
+<% get_tweets.each do |tweet| %>
+<br/>
+	<div class="tweet_box">
+		<p><%= @user.username %></p>
+		<p><%= tweet.created_at.strftime("%F") %></p>
+		<p><%= tweet.content %></p>
 	</div>
-	<br>
-
-
-		<% get_tweets.each do |tweet| %>
-		<br>
-			<div class="tweet_box">
-				<p><%= @user.username %></p>
-				<p><%= tweet.created_at.strftime("%F") %></p>
-				<p><%= tweet.content %></p>
-			</div>
-		<% end %>
+<% end %>
 

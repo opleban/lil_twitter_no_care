@@ -1,5 +1,5 @@
 get '/' do
-  unless logged_in?
+  unless !logged_in?
     @sign_up = params[:sign_up]
     erb :front
   else
@@ -24,9 +24,10 @@ get '/logout' do
 end
 
 get '/profile' do
-	@user = User.create(username:"dsubl", email:"dsubl@heythere.org", name:"Danielle Sublett")
-	session[:username] = "dsubl"
-	@user.tweets << Tweet.create(content:"Crunch crunch crunch")
+	# @user = User.create(username:"dsubl", email:"dsubl@heythere.org", name:"Danielle Sublett")
+	# session[:username] = "dsubl"
+	# @user.tweets << Tweet.create(content:"Crunch crunch crunch")
+  @user = get_user
 	erb :profile
 end
 
