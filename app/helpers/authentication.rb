@@ -13,9 +13,9 @@ helpers do
     session[:username] = @user.username
   end
 
-  def logged_in?
-    session[:username] ? true : false
-  end
+  # def logged_in?
+  #   session[:username] ? true : false
+  # end
 
     # #creating a new user
   def create
@@ -29,8 +29,8 @@ helpers do
   end
 
   def current_user
-    if session[:email]
-      User.find_by(email: session[:email])
+    if session[:username]
+      User.find_by(username: session[:username])
     else
       false
     end
