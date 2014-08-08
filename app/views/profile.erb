@@ -1,16 +1,19 @@
+
 <%= erb :search_bar %>
-<h1>Hello <%=@user.username %>!</h1>
-<div id="new_tweet">
-	<h2>Compose new Quack</h2>
-	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
-</div>
-<br/>
-<% get_tweets.each do |tweet| %>
-<br/>
-	<div class="tweet_box">
-		<p><%= @user.username %></p>
-		<p><%= tweet.created_at.strftime("%F") %></p>
-		<p><%= tweet.content %></p>
+	<h1 class="user">Hello <%=@user.username %>!</h1>
+	<div id="new_tweet">
+		<h2>Compose new Quack</h2>
+		 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
 	</div>
-<% end %>
+	<br>
+
+
+		<% get_tweets.each do |tweet| %>
+		<br>
+			<div class="tweet_box">
+				<p class="users"><%= @user.username %></p>
+				<p class="usertweet"><%= tweet.created_at.strftime("%F") %></p>
+				<p class="usertweet"><%= tweet.content %></p>
+			</div>
+		<% end %>
 
