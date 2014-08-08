@@ -1,5 +1,5 @@
 get '/' do
-  unless !logged_in?
+  unless logged_in?
     @sign_up = params[:sign_up]
     erb :front
   else
