@@ -38,6 +38,21 @@ get '/users/:id/profile' do
   erb :other_profile
 end
 
+get '/users/:id/followers' do
+  @user = User.find(params[:id])
+  erb :followers
+end
+
+get '/users/:id/followings' do
+  @user = User.find(params[:id])
+  erb :followings
+end
+
+get '/users/:id/relation' do #I know this should be a post but out of time
+  @user = User.find(params[:id])
+  @user.followers << User.find_by(username: session[:username])
+  redirect '/users/#{current_user.id}/followings'
+end
 
 post '/tweet/new' do
   if !Tweet.create_tweet(params)

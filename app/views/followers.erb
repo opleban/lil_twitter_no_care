@@ -1,0 +1,7 @@
+<h1>People that Follow User <%=@user.username %></h1>
+
+<div class="tweet_box">
+  <% @user.followers do |follower| %>
+  <button><a href="/users/<%=follower.id%>"><%= follower.username %></a></button>
+  <% end %>
+</div>

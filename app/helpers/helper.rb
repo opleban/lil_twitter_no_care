@@ -14,4 +14,10 @@ helpers do
 	def search_by_username(username)
 		User.where(username:username)
 	end
+
+  def current_user
+    if session[:username]
+      @current_user ||= User.find_by(username: session[:username])
+    end
+  end
 end

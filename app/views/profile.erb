@@ -1,11 +1,18 @@
 <%= erb :search_bar %>
 <h1>Hello <%=@user.username %>!</h1>
 <%= gravatar_tag @user.email, :size => 200 %>
+
+<br>
+<button><a href="/users/<%=@user.id%>/followers">Followers</a></button>
+<br>
+<button><a href="/users/<%=@user.id%>/followings">Follows</a></button>
+<br>
+<button><a href="/users/<%=@user.id%>/relation">Follow <%=@user.username%>!</a></button>
+
 <div id="new_tweet">
 	<h2>Compose new Quack</h2>
 	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
 </div>
-<<<<<<< HEAD
 <br/>
 
 <% if params[:error] %>
@@ -20,5 +27,6 @@
 		<p class="usertweet"><%= tweet.content %></p>
 	</div>
 <% end %>
+
 
 
