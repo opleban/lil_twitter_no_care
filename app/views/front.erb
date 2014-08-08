@@ -1,9 +1,12 @@
-
 <div class="title">
   <h1>"Welcome to Quacker"</h1>
-  <% if params[:error] %>
-  <div class="error">Login error.</div>
-<% end %> 
+</div>
+<% if params[:error] %>
+	<div class="error">Login error.</div>
+<% end %>	
+<div id="signing_up">
+  <h3>Signup:</h3>
+  <a id="signup_button" href='/?sign_up=true'>Sign up</a>
 </div>
 
 
@@ -12,9 +15,7 @@
 </div>
 
 
-<div id="signing_up">
-  <a id="signup_button" href='/?sign_up=true'>Sign up</a>
-</div>
+
 
 <%if @sign_up %>
   <%= erb :sign_up %>
