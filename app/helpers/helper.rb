@@ -5,3 +5,7 @@ end
 def get_tweets
 	get_user.tweets.reverse
 end
+
+def search_by_username(username)
+	User.where(username:username)
+end
