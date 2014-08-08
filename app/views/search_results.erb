@@ -1,0 +1,7 @@
+<% if @results.empty? %>
+	<p>No search results</p>
+<% else %>
+	<% @results.each do |user| %>
+		<a href="/users/<%= user.id %>/profile"><%= user.username %></a>
+	<% end %>
+<% end %>

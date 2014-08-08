@@ -24,12 +24,20 @@ get '/logout' do
 end
 
 get '/profile' do
-	# @user = User.create(username:"dsubl", email:"dsubl@heythere.org", name:"Danielle Sublett")
-	# session[:username] = "dsubl"
-	# @user.tweets << Tweet.create(content:"Crunch crunch crunch")
   @user = get_user
 	erb :profile
 end
+
+get '/search' do
+  @results = search_by_username(params[:search_key])
+  erb :search_results
+end
+
+get '/users/:id/profile' do
+  @user = User.find(params[:id])
+  erb :other_profile
+end
+
 
 post '/tweet/new' do
 	get_user.tweets << Tweet.create(params)
