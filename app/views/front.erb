@@ -1,8 +1,15 @@
-<h1>"Welcome to Quacker"</h1>
+<div class="title">
+  <h1>"Welcome to Quacker"</h1>
+</div>
+<div id="signing_up">
+  <h3>Signup:</h3>
+  <a id="signup_button" href='/?sign_up=true'>Sign up</a>
+</div>
 
-<%= erb :login %>
-<br/>
-<a href='/?sign_up=true'>Sign up</a>
+<div id="navbar">
+  <%= erb :login %>
+</div>
+
 
 <%if @sign_up %>
   <%= erb :sign_up %>
