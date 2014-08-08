@@ -13,8 +13,14 @@
 		<p><%= tweet.content %></p>
 	</div>
 <% end %>
+<br>
 
-<% if @retweet %>
-<h1>@retweet.content</h1>
+<% @retweets.each do |retweet| %>
+ <br>
+  <div class = "tweet_box">
+    <p><%= retweet.tweet.user.username %></p>
+    <p><%= retweet.created_at.strftime("%F") %></p>
+    <p><%= retweet.content %></p>
+  </div>
 <% end %>
 
