@@ -9,7 +9,6 @@ class User < ActiveRecord::Base
   has_many :reverse_relations, class_name: 'Relation', foreign_key: 'user_b_id'
 
   has_many :followers, through: :relations, source: :user_b, before_add: Proc.new {|user,follower| user.relations.create(user_b: follower)}, before_remove: Proc.new {|user,follower| user.relations.where(user_b:follower, rel_type: 'following of').first.destroy}
-
   has_many :followings, through: :reverse_relations, source: :user_a, before_add: Proc.new{|user,following| user.reverse_relations.create(user_a: following)}, before_remove: Proc.new {|user,following| user.reverse_relations.where(user_b:follower).first.destroy}
 
   include BCrypt
