@@ -7,5 +7,9 @@
 		<p><%= @user.username %></p>
 		<p><%= tweet.created_at.strftime("%F") %></p>
 		<p><%= tweet.content %></p>
+    <form action = '/retweet/<%= tweet.id %>' method = 'post'>
+
+      <button type = "submit">Retweet</button>
+    </form>
 	</div>
 <% end %>

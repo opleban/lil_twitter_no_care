@@ -44,3 +44,13 @@ post '/tweet/new' do
 	redirect '/profile'
 end
 
+#figure out how to change this route...
+post '/retweet/:id' do
+  tweet = Tweet.find(params[:id])
+  @retweet = Retweet.create(:tweet_id => tweet.id, :user_id => tweet.user_id, :content => tweet.content)
+  
+  redirect '/profile'
+end
+
+
+
