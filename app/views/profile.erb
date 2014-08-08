@@ -1,6 +1,9 @@
 <%= erb :search_bar %>
-<h1>Hello <%=@user.username %>!</h1>
+
+<h1 class="user">Hello <%= @user.username %>!</h1>
+<div id="gravatar">
 <%= gravatar_tag @user.email, :size => 200 %>
+</div>
 
 <br>
 <button><a href="/users/<%=@user.id%>/followers">Followers</a></button>
@@ -13,6 +16,7 @@
 	<h2>Compose new Quack</h2>
 	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
 </div>
+<<<<<<< HEAD
 <br/>
 
 <% if params[:error] %>
@@ -21,12 +25,28 @@
 
 <br>
 <% get_tweets.each do |tweet| %>
+=======
+
+<br/>
+<% get_my_tweets.each do |tweet| %>
+<br/>
+>>>>>>> master
 	<div class="tweet_box">
-		<p class="users"><%= @user.username %></p>
-		<p class="usertweet"><%= tweet.created_at.strftime("%F") %></p>
-		<p class="usertweet"><%= tweet.content %></p>
+  <% if tweet.class == Retweet %>
+  <p><em>Requack</em></p>
+    <p><%= tweet.tweet.user.username %></p>
+  <% elsif tweet.class == Tweet %>
+  <p><em>Quack</em></p>
+    <p><%= @user.username %></p>
+  <%end%>
+		<p><%= tweet.created_at.strftime("%F") %></p>
+		<p><%= tweet.content %></p>
+
 	</div>
 <% end %>
+<br>
+
+
 
 
 
