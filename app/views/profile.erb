@@ -1,11 +1,18 @@
-<div class="container">
+
 	<h1>Hello <%=@user.username %>!</h1>
-	<%= erb :new_tweet_form %>
-	<% get_tweets.each do |tweet| %>
-		<div class="tweet_box">
-			<p><%= @user.username %></p>
-			<p><%= tweet.created_at.strftime("%F") %></p>
-			<p><%= tweet.content %></p>
-		</div>
-	<% end %>
-</div>
+	<div id="new_tweet">
+		<h2>Compose new Quack</h2>
+		 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
+	</div>
+	<br>
+
+
+		<% get_tweets.each do |tweet| %>
+		<br>
+			<div class="tweet_box">
+				<p><%= @user.username %></p>
+				<p><%= tweet.created_at.strftime("%F") %></p>
+				<p><%= tweet.content %></p>
+			</div>
+		<% end %>
+
