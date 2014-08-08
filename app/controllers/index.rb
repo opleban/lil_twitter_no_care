@@ -37,6 +37,7 @@ end
 
 get '/users/:id/profile' do
   @user = User.find(params[:id])
+  @username = @user.username
   erb :other_profile
 end
 

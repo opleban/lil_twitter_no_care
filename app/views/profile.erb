@@ -5,7 +5,7 @@
 	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
 </div>
 <br/>
-<% get_tweets.each do |tweet| %>
+<% get_my_tweets.each do |tweet| %>
 <br/>
 	<div class="tweet_box">
   <% if tweet.class == Retweet %>
