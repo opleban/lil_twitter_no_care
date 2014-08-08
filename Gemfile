@@ -12,6 +12,7 @@ gem 'activesupport', '~>4.1'
 gem 'activerecord', '~>4.1'
 
 gem 'unicorn'
+gem 'gravatarify', '~> 3.0.0'
 
 gem 'rake'
 gem 'bcrypt'
