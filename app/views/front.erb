@@ -1,5 +1,7 @@
 <h1>"Welcome to Quacker"</h1>
-
+<% if params[:error] == "true" %>
+	<div class="error">Login error.</div>
+<% end %>	
 <%= erb :login %>
 <br/>
 <a href='/?sign_up=true'>Sign up</a>
