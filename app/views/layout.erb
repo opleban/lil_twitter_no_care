@@ -14,18 +14,25 @@
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
 
   <title>Quacker</title>
+
 </head>
 <body>
   <nav>
-      <% if logged_in? %>
-        <form action="/logout" method="get">
-          <input type="submit" value="Sign Out">
-        </form>
-      <% end %>
-    </ul>
+    <% if current_user %>
+      <form action="/logout" method="get">
+        <input type="submit" value="Sign Out">
+      </form>
+      <form action="/profile" method="get">
+        <input type="submit" value="Home">
+      </form>
+    <% end %>
   </nav>
   <%= yield %>
+  <img id="duck" src="../images/duck.png">
+  <img id="duck2" src="../images/duck.png">
 </body>
 </html>

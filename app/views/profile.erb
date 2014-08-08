@@ -1,9 +1,11 @@
 <%= erb :search_bar %>
 <h1>Hello <%=@user.username %>!</h1>
+<%= gravatar_tag @user.email, :size => 200 %>
 <div id="new_tweet">
 	<h2>Compose new Quack</h2>
 	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
 </div>
+
 <br/>
 <% get_my_tweets.each do |tweet| %>
 <br/>
@@ -17,8 +19,10 @@
   <%end%>
 		<p><%= tweet.created_at.strftime("%F") %></p>
 		<p><%= tweet.content %></p>
+
 	</div>
 <% end %>
 <br>
+
 
 

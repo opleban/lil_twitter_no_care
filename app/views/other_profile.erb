@@ -1,8 +1,14 @@
 <%= erb :search_bar %>
 </div>
 <br/>
+
+<%= gravatar_tag @user.email, :size => 200 %>
+
+
 <h1><%= @user.username %></h1>
 <% get_other_users_tweets(@user.username).each do |tweet| %>
+
+
 <br/>
   <div class="tweet_box">
   <% if tweet.class == Retweet %>
