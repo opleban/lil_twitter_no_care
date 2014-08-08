@@ -1,4 +1,7 @@
 helpers do
+
+	include Gravatarify::Helper
+
 	def get_user
 		User.find_by(username: session[:username])
 	end
