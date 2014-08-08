@@ -9,15 +9,25 @@
 	<h2>Compose new Quack</h2>
 	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
 </div>
-<br>
-<% get_tweets.each do |tweet| %>
-<br>
+
+<br/>
+<% get_my_tweets.each do |tweet| %>
+<br/>
 	<div class="tweet_box">
-		<p class="users"><%= @user.username %></p>
-		<p class="usertweet"><%= tweet.created_at.strftime("%F") %></p>
-		<p class="usertweet"><%= tweet.content %></p>
+  <% if tweet.class == Retweet %>
+  <p><em>Requack</em></p>
+    <p><%= tweet.tweet.user.username %></p>
+  <% elsif tweet.class == Tweet %>
+  <p><em>Quack</em></p>
+    <p><%= @user.username %></p>
+  <%end%>
+		<p><%= tweet.created_at.strftime("%F") %></p>
+		<p><%= tweet.content %></p>
+
 	</div>
 <% end %>
+<br>
+
 
 
 
