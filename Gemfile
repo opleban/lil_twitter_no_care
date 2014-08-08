@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.1.1'
 
 # PostgreSQL driver
 gem 'pg'
@@ -14,6 +14,7 @@ gem 'activerecord', '~>4.1'
 gem 'unicorn'
 
 gem 'rake'
+gem 'bcrypt'
 
 group :test do
   gem 'shoulda-matchers'
