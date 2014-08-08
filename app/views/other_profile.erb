@@ -6,14 +6,15 @@
 <br/>
   <div class="tweet_box">
   <% if tweet.class == Retweet %>
+  <p><em>Requack</em></p>
     <p><%= tweet.tweet.user.username %></p>
   <% elsif tweet.class == Tweet %>
+    <p><em>Quack</em></p>
     <p><%= @user.username %></p>
   <%end%>
     <p><%= tweet.created_at.strftime("%F") %></p>
     <p><%= tweet.content %></p>
     <form action = '/retweet/<%= tweet.id %>' method = 'post'>
-
       <button type = "submit">Requack</button>
     </form>
 	</div>
