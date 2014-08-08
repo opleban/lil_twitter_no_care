@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  # validates :email, presence: true
+  # validates :username, uniqueness: true
 
   has_many :tweets
   has_many :retweets
@@ -11,10 +13,6 @@ class User < ActiveRecord::Base
   has_many :followings, through: :reverse_relations, source: :user_a, before_add: Proc.new{|user,following| user.reverse_relations.create(user_a: following)}, before_remove: Proc.new {|user,following| user.reverse_relations.where(user_b:follower).first.destroy}
 
   include BCrypt
-	has_many :tweets
-  has_many :user
-  belongs_to :users
-
 
   # #When you type in password, you check @password or create a new password for new user.
   def password

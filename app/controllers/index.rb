@@ -40,7 +40,11 @@ end
 
 
 post '/tweet/new' do
-	get_user.tweets << Tweet.create(params)
-	redirect '/profile'
+  if !Tweet.create_tweet(params)
+    redirect '/profile?error=true'
+  else
+    get_user.tweets << Tweet.create_tweet(params)
+    redirect '/profile'
+  end
 end
 

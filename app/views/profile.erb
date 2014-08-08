@@ -5,8 +5,13 @@
 	 <%= erb :new_tweet_form %> <!-- This is a partial to new_tweet_form  -->
 </div>
 <br/>
+
+<% if params[:error] %>
+  <p>You entered too many characters. Max of 140.</p>
+<% end %>
+
 <% get_tweets.each do |tweet| %>
-<br/>
+  <br/>
 	<div class="tweet_box">
 		<p><%= @user.username %></p>
 		<p><%= tweet.created_at.strftime("%F") %></p>
